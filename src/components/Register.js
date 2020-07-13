@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 
 function Register() {
+  const [user, setUser] = useState({
+    name: '',
+    email: '',
+    role: '',
+    password: '',
+    password2: '',
+  });
+
+  const { name, email, password, password2, role } = user;
+
+  const onChange = (event) => {
+    setUser({ ...user, [event.target.name]: event.target.value });
+  };
+
   return (
     <section className='body-sign'>
       <div className='center-sign'>
-        <a href='https://preview.oklerthemes.com/' className='logo float-left'>
-          <img src='img/logo.png' height='54' alt='Porto Admin' />
+        <a href='https://code.in/' className='logo float-left'>
+          <img src='https://code.in/images/logo-gif.gif' height='54' alt='Code.in' />
         </a>
 
         <div className='panel card-sign'>
@@ -16,38 +30,69 @@ function Register() {
           </div>
           <div className='card-body'>
             <form>
+              <div className='form-group mb-3' onChange={onChange}>
+                <label className='mr-5'>
+                  Student
+                  <input name='role' type='radio' className='radio-inline ml-2' value='student' defaultChecked />
+                </label>
+                <label className='mr-5'>
+                  Faculty
+                  <input name='role' type='radio' className='radio-inline ml-2' value='faculty' />
+                </label>
+              </div>
               <div className='form-group mb-3'>
                 <label>Name</label>
-                <input name='name' type='text' className='form-control form-control-lg' />
+                <input
+                  name='name'
+                  placeholder={role === 'student' ? 'Enter Student Name' : 'Enter Faculty Name'}
+                  type='text'
+                  className='form-control form-control-lg'
+                  value={name}
+                  onChange={onChange}
+                />
               </div>
 
               <div className='form-group mb-3'>
                 <label>E-mail Address</label>
-                <input name='email' type='email' className='form-control form-control-lg' />
+                <input
+                  name='email'
+                  type='email'
+                  placeholder='Enter Email'
+                  className='form-control form-control-lg'
+                  value={email}
+                  onChange={onChange}
+                />
               </div>
-
               <div className='form-group mb-0'>
                 <div className='row'>
                   <div className='col-sm-6 mb-3'>
                     <label>Password</label>
-                    <input name='pwd' type='password' className='form-control form-control-lg' />
+                    <input
+                      name='password'
+                      type='password'
+                      placeholder='Enter Password'
+                      className='form-control form-control-lg'
+                      value={password}
+                      onChange={onChange}
+                      minLength={6}
+                    />
                   </div>
                   <div className='col-sm-6 mb-3'>
                     <label>Password Confirmation</label>
-                    <input name='pwd_confirm' type='password' className='form-control form-control-lg' />
+                    <input
+                      name='password2'
+                      placeholder='Confirm Password'
+                      type='password'
+                      className='form-control form-control-lg'
+                      value={password2}
+                      onChange={onChange}
+                    />
                   </div>
                 </div>
               </div>
 
               <div className='row'>
-                <div className='col-sm-8'>
-                  <div className='checkbox-custom checkbox-default'>
-                    <input id='AgreeTerms' name='agreeterms' type='checkbox' />
-                    <label for='AgreeTerms'>
-                      I agree with <a href='#!'>terms of use</a>
-                    </label>
-                  </div>
-                </div>
+                <div className='col-sm-8'></div>
                 <div className='col-sm-4 text-right'>
                   <button type='submit' className='btn btn-primary mt-2'>
                     Sign Up

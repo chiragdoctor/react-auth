@@ -49,7 +49,7 @@ function Login() {
                 <div className='col-sm-8'>
                   <div className='checkbox-custom checkbox-default'>
                     <input id='RememberMe' name='rememberme' type='checkbox' />
-                    <label for='RememberMe'>Remember Me</label>
+                    <label htmlFor='RememberMe'>Remember Me</label>
                   </div>
                 </div>
                 <div className='col-sm-4 text-right'>

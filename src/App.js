@@ -11,7 +11,6 @@ const App = () => {
   return (
     <Router>
       <section className='body'>
-        <Header />
         <div className='inner-wrapper'>
           <Switch>
             <Route exact path='/register' component={Register} />
