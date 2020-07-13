@@ -4,8 +4,8 @@ function Login() {
   return (
     <section className='body-sign'>
       <div className='center-sign'>
-        <a href='https://preview.oklerthemes.com/' className='logo float-left'>
-          <img src='img/logo.png' height='54' alt='Porto Admin' />
+        <a href='https://code.in/' className='logo float-left'>
+          <img src='https://code.in/images/logo-gif.gif' height='54' alt='Code.in' />
         </a>
 
         <div className='panel card-sign'>
@@ -19,7 +19,7 @@ function Login() {
               <div className='form-group mb-3'>
                 <label>Username</label>
                 <div className='input-group'>
-                  <input name='username' type='text' className='form-control form-control-lg' />
+                  <input name='username' type='text' className='form-control form-control-lg placeholder' />
                   <span className='input-group-append'>
                     <span className='input-group-text'>
                       <i className='fas fa-user'></i>
@@ -36,7 +36,7 @@ function Login() {
                   </a>
                 </div>
                 <div className='input-group'>
-                  <input name='pwd' type='password' className='form-control form-control-lg' />
+                  <input name='pwd' type='password' className='form-control form-control-lg placeholder' />
                   <span className='input-group-append'>
                     <span className='input-group-text'>
                       <i className='fas fa-lock'></i>

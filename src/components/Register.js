@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState } from 'react';
 
 function Register() {
   const [user, setUser] = useState({
@@ -46,7 +46,7 @@ function Register() {
                   name='name'
                   placeholder={role === 'student' ? 'Enter Student Name' : 'Enter Faculty Name'}
                   type='text'
-                  className='form-control form-control-lg'
+                  className='form-control form-control-lg placeholder'
                   value={name}
                   onChange={onChange}
                 />
@@ -58,7 +58,7 @@ function Register() {
                   name='email'
                   type='email'
                   placeholder='Enter Email'
-                  className='form-control form-control-lg'
+                  className='form-control form-control-lg placeholder'
                   value={email}
                   onChange={onChange}
                 />
@@ -71,7 +71,7 @@ function Register() {
                       name='password'
                       type='password'
                       placeholder='Enter Password'
-                      className='form-control form-control-lg'
+                      className='form-control form-control-lg placeholder'
                       value={password}
                       onChange={onChange}
                       minLength={6}
@@ -83,7 +83,7 @@ function Register() {
                       name='password2'
                       placeholder='Confirm Password'
                       type='password'
-                      className='form-control form-control-lg'
+                      className='form-control form-control-lg placeholder'
                       value={password2}
                       onChange={onChange}
                     />
